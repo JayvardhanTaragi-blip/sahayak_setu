@@ -76,7 +76,7 @@ This release upgrades the platform with **Gemini AI function calling**, database
 │ Database        │ SQLite via better-sqlite3 (WAL Mode) │
 ├─────────────────┼──────────────────────────────────────┤
 │ AI Engine       │ Google Gen AI SDK (@google/genai)    │
-│                 │ Gemini 3.6 Flash (Function Calling)  │
+│                 │ Gemini 2.5 Flash (Function Calling)  │
 └─────────────────┴──────────────────────────────────────┘
 ```
 
