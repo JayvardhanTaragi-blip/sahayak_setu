@@ -17,16 +17,16 @@ This release upgrades the platform with **Gemini AI function calling**, database
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 1. 🤖 Gemini AI Grounded Assistant
-- **AI Brain**: Integrated with the official Google Gen AI SDK (`@google/genai`) running `gemini-3.6-flash`.
+### 1.  Groq AI Grounded Assistant
+- **AI Brain**: Integrated with the official Groq API AI Assistant.
 - **Database Grounding (12 Tools)**: The AI model never executes arbitrary SQL or hallucinates entities. It calls allowlisted backend functions (`find_workers`, `get_services`, `get_my_bookings`, `check_worker_availability`, etc.) that query SQLite server-side.
 - **Multilingual Support**: Communicates fluently in English, Hindi, and Hinglish.
 - **Interactive Action Pills**: Renders direct booking shortcuts (`[Book Worker]`, `[View Profile]`, `[Track Worker]`) inside assistant replies.
 - **Resilient Fallback**: Gracefully falls back to an offline rule-based brain if an API key is not configured or network drops.
 
-### 2. 📍 Live Worker Location Tracking
+### 2.  Live Worker Location Tracking
 - **Worker Sharing**: Workers toggle GPS broadcasting with throttled coordinate updates (`PATCH /api/maps/workers/me/location`).
 - **Authorization-Protected Customer Tracking**: `GET /api/maps/workers/:id/location` strictly restricts access:
   - Allowed **only** if the caller is the worker themselves, an admin, or a customer with an active/confirmed booking.
@@ -37,21 +37,21 @@ This release upgrades the platform with **Gemini AI function calling**, database
   - Freshness indicator (*"Worker location updated 8s ago"*).
   - An interactive **`[DEMO] Simulate`** toggle to simulate worker arrival along the route.
 
-### 3. 🗺️ Complaint & Demand Heatmap
+### 3.  Complaint & Demand Heatmap
 - Visualizes citizen complaints and service demand hotspots across city sectors on MapLibre GL JS.
 - Sourced from SQLite `service_complaints` via a standard GeoJSON endpoint (`GET /api/maps/complaints/heatmap`).
 - Dynamic filtering by trade (e.g. Electrician, Plumber) with 3-tier intensity grading (High / Medium / Low).
 
-### 4. 🛡️ Worker Suraksha Micro-Insurance Prototype
+### 4.  Worker Suraksha Micro-Insurance Prototype
 - Micro-coverage plan designed for gig workers: **₹49/month for ₹2,00,000 coverage** against accidental injury and hospitalization.
 - Instant simulated enrollment generating unique policy IDs (e.g., `SURAKSHA-2026-W3412`).
 - Integrated digital claim submission flow directly within the worker portal.
 
-### 5. 🚨 Worker Emergency SOS Workflow
+### 5.  Worker Emergency SOS Workflow
 - Dedicated emergency distress button in the Worker Protection Center.
 - Automatically captures current GPS coordinates, creates an urgent incident record in SQLite, provides immediate physical safety guidance, and connects to insurance claim assistance.
 
-### 6. 🩺 Unified Worker Protection Center
+### 6.  Unified Worker Protection Center
 - Integrated into `profile.html` alongside the operational fatigue management system (`workerSafety.js`).
 - Computes worker fatigue scores (0–100) based on working hours, continuous jobs, and breaks.
 - Provides break control buttons (*Take Break* / *End Break*) that protect workers from burnout.
@@ -82,7 +82,7 @@ This release upgrades the platform with **Gemini AI function calling**, database
 
 ---
 
-## 🗂️ Project File Structure
+##  Project File Structure
 
 ```text
 Sahayak Setu/
@@ -139,7 +139,7 @@ Sahayak Setu/
 
 ---
 
-## 🚀 Quick Start Guide
+##  Quick Start Guide
 
 ### Prerequisites
 - **Node.js**: Version `18.0.0` or higher
@@ -185,11 +185,11 @@ npm start
 
 ### Step 5: Open in Browser
 Open your browser and visit:
-👉 **`http://localhost:4000`**
+ **`http://localhost:4000`**
 
 ---
 
-## 🔑 Demo Logins
+##  Demo Logins
 
 The database comes pre-seeded with 3 test accounts (password for all three is **`demo1234`**):
 
@@ -217,7 +217,7 @@ npm test
 
 ---
 
-## 🔒 Security Best Practices
+##  Security Best Practices
 
 1. **API Key Isolation**: `GEMINI_API_KEY` is strictly server-side. It is never transmitted across client network requests or exposed in frontend code.
 2. **Database Integrity**: The Gemini AI assistant does not execute arbitrary SQL. All interactions pass through 12 strictly typed and verified parameterized queries.
@@ -227,9 +227,9 @@ npm test
 
 ---
 
-## 👥 Team & Contributions
+##  Team & Contributions
 
-- **AI Chatbot Engineer**: Gemini 3.6 Flash integration, 12 grounded tools, chat routes, action pills, and chat test verification.
+- **AI Chatbot Engineer**: Groq API integration, 12 grounded tools, chat routes, action pills, and chat test verification.
 - **Database Engineer**: SQLite schema definitions, indexes, migrations, seed datasets, and admin bootstrapping.
 - **Backend & Systems Engineer**: Express server architecture, JWT authentication/RBAC, REST API domain routes, worker safety fatigue engine, and test suites.
 - **Lead / Full-Stack Engineer**: System integration, MapLibre UI tracking, interactive documentation, and repository orchestration.
