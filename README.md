@@ -3,7 +3,6 @@
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 [![Database](https://img.shields.io/badge/database-SQLite%203-blue.svg)](https://github.com/WiseLibs/better-sqlite3)
-[![AI Engine](https://img.shields.io/badge/AI-Gemini%203.6%20Flash-orange.svg)](https://ai.google.dev/)
 [![Mapping](https://img.shields.io/badge/maps-MapLibre%20GL%20JS-blueviolet.svg)](https://maplibre.org/)
 [![Tests](https://img.shields.io/badge/tests-182%20passed-success.svg)](#-testing)
 
